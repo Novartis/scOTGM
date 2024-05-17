@@ -28,7 +28,7 @@ jobs:
         run: echo "PYTHONPATH=$PYTHONPATH:$(pwd)/src" >> $GITHUB_ENV
 
       - name: Create _static directory
-        run: mkdir -p docs/_static
+        run: mkdir -p docs/source/_static
 
       - name: Build documentation
         run: |
