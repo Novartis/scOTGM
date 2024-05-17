@@ -9,9 +9,3 @@ src.dataloader.cropSeq module
    :members:
    :undoc-members:
    :show-inheritance:
-
-
-.. automodule:: src.dataloader
-   :members:
-   :undoc-members:
-   :show-inheritance:
