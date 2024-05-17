@@ -3,7 +3,7 @@ name: Deploy Sphinx Docs to GitHub Pages
 on:
   push:
     branches:
-      - main  
+      - main
 
 jobs:
   build:
@@ -16,7 +16,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
-          python-version: '3.10'  
+          python-version: '3.10'
 
       - name: Install dependencies
         run: |
@@ -26,15 +26,12 @@ jobs:
           sudo apt-get install -y pandoc
 
       - name: Set PYTHONPATH
-        run: echo "PYTHONPATH=$PYTHONPATH:$(pwd)/src" >> $GITHUB_ENV
-
-      - name: Create _static directory
-        run: mkdir -p docs/source/_static
+        run: echo "PYTHONPATH=$(pwd)/source" >> $GITHUB_ENV
 
       - name: Build documentation
         run: |
           cd docs
-          make html SPHINXOPTS="-c source"
+          make html
           touch build/html/.nojekyll  # Prevent Jekyll from processing the site
 
       - name: Deploy to GitHub Pages
