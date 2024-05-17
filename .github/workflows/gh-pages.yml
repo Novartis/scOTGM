@@ -34,6 +34,7 @@ jobs:
         run: |
           cd docs
           make html SPHINXOPTS="-c source"
+          touch build/html/.nojekyll  # Prevent Jekyll from processing the site
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
