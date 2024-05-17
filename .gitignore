@@ -173,7 +173,6 @@ docs/build
 .vscode*
 
 .DS_Store
-docs/build
 
 *.h5ad
 *.tsv
